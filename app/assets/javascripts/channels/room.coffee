@@ -14,7 +14,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     @perform 'speak', message: message
 
   $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-    if event.keyCode is 13
+    if event.keyCode is 13   # ENTER key
       App.room.speak event.target.value
       event.target.value = ''
 	  # TODO: エラーになる↓
